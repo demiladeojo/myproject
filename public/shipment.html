@@ -245,8 +245,7 @@
                                     <div class="px-4 py-5 bg-white sm:p-6">
                                         <div class="grid grid-cols-6 gap-6">
                                             <div class="col-span-6 sm:col-span-3">
-                                                <label for="first_name" class="block text-sm font-medium text-gray-700">First
-                                                    name</label>
+                                                <label for="first_name" class="block text-sm font-medium text-gray-700">First name</label>
                                                 <input type="text" name="first_name" id="first_name" autocomplete="given-name"
                                                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md">
                                             </div>
@@ -256,14 +255,6 @@
                                                 <input type="text" name="last_name" id="last_name" autocomplete="family-name"
                                                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md">
                                             </div>
-                
-                                            <div class="col-span-6 sm:col-span-4">
-                                                <label for="email_address" class="block text-sm font-medium text-gray-700">Email
-                                                    address</label>
-                                                <input type="text" name="email_address" id="email_address" autocomplete="email"
-                                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md">
-                                            </div>
-                
                                             <div class="col-span-6 sm:col-span-3">
                                                 <label for="manufacturer" class="block text-sm font-medium text-gray-700">
                                                     Manufacturer</label>
@@ -273,6 +264,12 @@
                                                     <option>Moderna</option>
                                                     <option>AstraZeneca</option>
                                                 </select>
+                                            </div>
+                                            <div class="col-span-6 sm:col-span-4">
+                                                <label for="email_address" class="block text-sm font-medium text-gray-700">Batch No
+                                                    </label>
+                                                <input type="text" name="batch" id="batch"
+                                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md">
                                             </div>
                                             <div x-data x-init="flatpickr($refs.datetimewidget, {wrap: true, enableTime: true, dateFormat: 'M j, Y h:i K'});"
                                                 x-ref="datetimewidget" class="flatpickr container mx-auto col-span-6 sm:col-span-6 mt-5">
@@ -299,28 +296,27 @@
                 
                                             <div class="col-span-6">
                                                 <label for="street_address" class="block text-sm font-medium text-gray-700">Street
-                                                    address</label>
+                                                    </label>
                                                 <input type="text" name="street_address" id="street_address"
                                                     autocomplete="street-address"
-                                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm  border border-gray-300 rounded-md">
                                             </div>
                 
                                             <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                                                 <label for="city" class="block text-sm font-medium text-gray-700">City</label>
                                                 <input type="text" name="city" id="city"
-                                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm  border border-gray-300 rounded-md">
                                             </div>
                 
                                             <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                                <label for="state" class="block text-sm font-medium text-gray-700">State /
-                                                    Province</label>
+                                                <label for="state" class="block text-sm font-medium text-gray-700">State</label>
                                                 <input type="text" name="state" id="state"
-                                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm  border border-gray-300 rounded-md">
                                             </div>
                 
                                             <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                                <label for="postal_code" class="block text-sm font-medium text-gray-700">ZIP /
-                                                    Postal</label>
+                                                <label for="postal_code" class="block text-sm font-medium text-gray-700">ZIP
+                                                </label>
                                                 <input type="text" name="postal_code" id="postal_code" autocomplete="postal-code"
                                                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                             </div>
