@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Starter Dashboard Layout</title>    
-    <link rel="stylesheet" href="/build/tailwind.css" />
+    <link rel="stylesheet" href="/css/tailwind.css" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
 </head>
 
@@ -62,8 +62,16 @@
                             <span :class="{ 'lg:hidden': !isSidebarOpen}">Dashboard</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="shipment.html" class="flex items-center p-2 space-x-2 rounded-md hover:bg-gray-100"
+                <li>
+                    <a href="inventory.html" class="flex items-center p-2 space-x-2 rounded-md hover:bg-gray-100"
+                        :class="{'justify-center': !isSidebarOpen}">
+                        <span>
+                            <img class="w-6 h-6 text-gray-400" src="images/inventory.png"></img></span>
+                
+                        <span :class="{ 'lg:hidden': !isSidebarOpen }">Add Inventory</span>
+                    </a>
+                </li>
+                        <a href="shipment.html" class="flex items-center p-2 space-x-2 rounded-md bg-gray-100"
                             :class="{'justify-center': !isSidebarOpen}">
                             <span>
                                 <img class="w-6 h-6 text-gray-400" src="images/delivery1.png"></img></span>
@@ -73,6 +81,15 @@
                     </li>
                     <li>
                         <a href="record.html" class="flex items-center p-2 space-x-2 rounded-md hover:bg-gray-100"
+                            :class="{'justify-center': !isSidebarOpen}">
+                            <span>
+                                <img class="w-6 h-6 text-gray-400" src="images/order.png"></img></span>
+                    
+                            <span :class="{ 'lg:hidden': !isSidebarOpen }">Shipment details</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="map.html" class="flex items-center p-2 space-x-2 rounded-md hover:bg-gray-100"
                             :class="{'justify-center': !isSidebarOpen}">
                             <span>
                                 <img class="w-6 h-6 text-gray-400" src="images/maps.png"></img></span>
@@ -235,16 +252,24 @@
                             <div class="px-4 sm:px-0">
                                 <h3 class="text-lg font-medium leading-6 text-gray-900">Address</h3>
                                 <p class="mt-1 text-sm text-gray-600">
-                                    Use a permanent address where you can receive mail.
+                                    Shipment details.
                                 </p>
                             </div>
                         </div>
                         <div class="mt-5 md:mt-0 md:col-span-2">
                             <form action="#" method="POST">
+
                                 <div class="shadow overflow-hidden sm:rounded-md">
+                                    
                                     <div class="px-4 py-5 bg-white sm:p-6">
+                                        <div class="md:col-span-1">
+                                            <div class="px-4 sm:px-0">
+                                                <h3 class="text-lg font-medium leading-6 text-gray-900">Custordian</h3>
+                                            </div>
+                                        </div>
                                         <div class="grid grid-cols-6 gap-6">
                                             <div class="col-span-6 sm:col-span-3">
+                                                
                                                 <label for="first_name" class="block text-sm font-medium text-gray-700">First name</label>
                                                 <input type="text" name="first_name" id="first_name" autocomplete="given-name"
                                                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md">
@@ -266,11 +291,18 @@
                                                 </select>
                                             </div>
                                             <div class="col-span-6 sm:col-span-4">
-                                                <label for="email_address" class="block text-sm font-medium text-gray-700">Batch No
+                                                <label for="batch no" class="block text-sm font-medium text-gray-700">Batch No
                                                     </label>
                                                 <input type="text" name="batch" id="batch"
                                                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md">
                                             </div>
+                                            <div class="col-span-6 sm:col-span-4">
+                                                <label for="batch no" class="block text-sm font-medium text-gray-700">Quantity
+                                                </label>
+                                                <input type="quantity" name="quantity" id="quantity"
+                                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md">
+                                            </div>
+                                            
                                             <div x-data x-init="flatpickr($refs.datetimewidget, {wrap: true, enableTime: true, dateFormat: 'M j, Y h:i K'});"
                                                 x-ref="datetimewidget" class="flatpickr container mx-auto col-span-6 sm:col-span-6 mt-5">
                                                 <label for="datetime" class="flex-grow  block font-medium text-sm text-gray-700 mb-1">Date and Time</label>
@@ -318,7 +350,7 @@
                                                 <label for="postal_code" class="block text-sm font-medium text-gray-700">ZIP
                                                 </label>
                                                 <input type="text" name="postal_code" id="postal_code" autocomplete="postal-code"
-                                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm  border border-gray-300 rounded-md">
                                             </div>
                                         </div>
                                     </div>
@@ -345,9 +377,7 @@
                         <div class="md:col-span-1">
                             <div class="px-4 sm:px-0">
                                 <h3 class="text-lg font-medium leading-6 text-gray-900">Notifications</h3>
-                                <p class="mt-1 text-sm text-gray-600">
-                                    Decide which communications you'd like to receive and how.
-                                </p>
+                                                                                                            
                             </div>
                         </div>
                         <div class="mt-5 md:mt-0 md:col-span-2">
@@ -355,7 +385,6 @@
                                 <div class="shadow overflow-hidden sm:rounded-md">
                                     <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
                                         <fieldset>
-                                            <legend class="text-base font-medium text-gray-900">By Email</legend>
                                             <div class="mt-4 space-y-4">
                                                 <div class="flex items-start">
                                                     <div class="flex items-center h-5">
@@ -363,9 +392,8 @@
                                                             class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                                                     </div>
                                                     <div class="ml-3 text-sm">
-                                                        <label for="comments" class="font-medium text-gray-700">Comments</label>
-                                                        <p class="text-gray-500">Get notified when someones posts a comment on a
-                                                            posting.</p>
+                                                        <label for="comments" class="font-medium text-gray-700">Texts</label>
+                                                        
                                                     </div>
                                                 </div>
                                                 <div class="flex items-start">
@@ -374,50 +402,11 @@
                                                             class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                                                     </div>
                                                     <div class="ml-3 text-sm">
-                                                        <label for="candidates" class="font-medium text-gray-700">Candidates</label>
-                                                        <p class="text-gray-500">Get notified when a candidate applies for a job.</p>
+                                                        <label for="candidates" class="font-medium text-gray-700">Mail</label>
+                                                        
                                                     </div>
                                                 </div>
-                                                <div class="flex items-start">
-                                                    <div class="flex items-center h-5">
-                                                        <input id="offers" name="offers" type="checkbox"
-                                                            class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
-                                                    </div>
-                                                    <div class="ml-3 text-sm">
-                                                        <label for="offers" class="font-medium text-gray-700">Offers</label>
-                                                        <p class="text-gray-500">Get notified when a candidate accepts or rejects an
-                                                            offer.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                        <fieldset>
-                                            <div>
-                                                <legend class="text-base font-medium text-gray-900">Push Notifications</legend>
-                                                <p class="text-sm text-gray-500">These are delivered via SMS to your mobile phone.</p>
-                                            </div>
-                                            <div class="mt-4 space-y-4">
-                                                <div class="flex items-center">
-                                                    <input id="push_everything" name="push_notifications" type="radio"
-                                                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                                    <label for="push_everything" class="ml-3 block text-sm font-medium text-gray-700">
-                                                        Everything
-                                                    </label>
-                                                </div>
-                                                <div class="flex items-center">
-                                                    <input id="push_email" name="push_notifications" type="radio"
-                                                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                                    <label for="push_email" class="ml-3 block text-sm font-medium text-gray-700">
-                                                        Same as email
-                                                    </label>
-                                                </div>
-                                                <div class="flex items-center">
-                                                    <input id="push_nothing" name="push_notifications" type="radio"
-                                                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                                    <label for="push_nothing" class="ml-3 block text-sm font-medium text-gray-700">
-                                                        No push notifications
-                                                    </label>
-                                                </div>
+                                                
                                             </div>
                                         </fieldset>
                                     </div>

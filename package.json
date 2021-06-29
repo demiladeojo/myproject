@@ -17,6 +17,9 @@
   "dependencies": {
     "autoprefixer": "9",
     "bash": "0.0.1",
+    "loadash": "^1.0.0",
+    "lodash": "^4.17.21",
+    "mongodb": "^3.6.9",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4"
   },
   "devDependencies": {
